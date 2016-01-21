@@ -1,0 +1,243 @@
+/////////////////////////////////////-+++-/////////////////////////////////////////
+// The main CSS file
+//    
+/////////////////////////////////////-+++-/////////////////////////////////////////
+
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: dodgerblue;
+
+    &:hover {
+        color: darken(dodgerblue, 10%);
+    }
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    text-align: center;
+    background: thistle;
+    margin: 0 0 100px;
+    padding: 20px;
+    letter-spacing: 5px;
+    font-weight: 400;
+    position: relative;
+}
+
+.SiteMain section {
+    max-width: 800px;
+    margin : 0 auto 100px;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 3px;
+        font-weight: 400;
+        position: relative;
+        padding: 3px 6px;
+        text-align: center;
+    }
+}
+.stats {
+    dl {
+        width: 50%;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: -5px;
+        padding-right: 20px;
+    }
+
+    dt, dd {
+        margin: 0;
+        padding-left: 10px;
+        border-left: 1px solid thistle;
+    }
+
+    dt {
+        font-size: 12px;
+        font-weight: 600;
+        padding-bottom: 3px;
+        color: darken(thistle, 16%);
+    }
+
+    dd {
+        border-bottom: 1px solid thistle;
+        padding-bottom: 11px;
+        margin-bottom: 13px;
+        font-size: 18px;
+    }
+
+    dl:last-child {
+        border: 1px solid thistle;
+        padding: 17px 6px 10px;
+
+        dd, dt {
+            border: none;
+        }
+    }
+
+    ul {
+        margin: 0;
+        list-style: none;
+        padding: 14px 0 0 0 ;
+        font-size: 17px;
+
+        li:not(:last-child) {
+            margin-bottom: 18px;
+        }
+    }
+}
+
+
+.highlights {
+
+    ol {
+        margin-top: 40px;
+        margin-bottom: 110px;
+    }
+
+    p {
+        margin: 0;
+    }
+    strong {
+        font-size: 24px;
+        line-height: 32px;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    li {
+        margin-bottom: 30px;
+        padding-left: 20px;
+    }
+}
+
+.projects {
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+    }
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 23px;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            background: thistle;
+            border-radius: 50%;
+            position: absolute;
+            top: 12px; 
+            left: -7px;
+        }
+
+        &:after {
+            left: auto;
+            right: -7px;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        margin-top: 80px;
+    }
+
+    ul:last-child {
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
+.u-numberList {
+    counter-reset: steps;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        counter-increment: steps;
+        position: relative; 
+        padding-left: 70px;
+        padding-top: 6px;
+
+        &:before,
+        &:after {
+            @extend %u-largeText;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35px;
+            text-align: center;
+        }
+
+        &:after {
+            content: counter(steps);
+            top: 8px;
+            font-weight: 500;
+            font-size: 21px;
+            color: white;
+
+        }
+
+        &:before {
+            background: thistle;
+            height: 35px;
+            border-radius: 50%;
+            left: 0px;
+            top: 4px;
+        }
+    }
+}
+
+.SiteMain .u-smallCol {
+    max-width: 690px;
+
+    > h2,
+    > header {
+        margin-bottom: 36px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0 0 6px;
+    }
+
+    li ul {
+        margin-bottom: 30px;
+    }
+
+    > ol > li {
+        margin-bottom: 30px;
+    }
+}
+
+.u-alignCenter {
+    text-align: center;
+}
